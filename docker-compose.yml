@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  email-tracking-demo:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - PORT=3000
+      - NEXT_TELEMETRY_DISABLED=1
