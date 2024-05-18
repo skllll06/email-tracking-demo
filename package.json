@@ -1,6 +1,16 @@
 {
   "name": "email-tracking-demo",
   "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Shunsuke Kataoka",
+    "email": "katoaka@sllll.com",
+    "url": "https://github.com/skllll06"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skllll06/email-tracking-demo.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
