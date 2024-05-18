@@ -1,74 +1,76 @@
 {
-  "root": true,
-  "parserOptions": {
-    "project": "./tsconfig.json", // tsconfig.json のパスを指定
-    "sourceType": "module" // ES Modules を使用する場合
-  },
-  "extends": [
-    // Next.js に最適化された推奨ルールセット
-    "next/core-web-vitals",
-    // TypeScript の推奨ルールセット
-    "plugin:@typescript-eslint/recommended",
-    // Tailwind CSS の推奨ルールセットを適用
-    "plugin:tailwindcss/recommended",
-    // Prettier のフォーマットルールと競合する ESLint ルールを無効化
-    "prettier"
-  ],
-  // TypeScript と未使用 import チェックのためのプラグインを追加
-  "plugins": ["@typescript-eslint", "unused-imports", "tailwindcss"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js"],
-      "parser": "@typescript-eslint/parser"
-    }
-  ],
-  "rules": {
-    // TypeScript の未使用変数ルールを無効化 (unused-imports が処理するため)
-    "@typescript-eslint/no-unused-vars": "off",
-    // 未使用の import 文をエラーとして扱う
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      // 未使用の変数に関するルール
-      "warn", // 警告レベル
-      {
-        // すべての変数 (ローカル変数、グローバル変数、関数パラメータ) をチェック
-        "vars": "all",
-        // アンダースコアで始まる変数を無視
-        "varsIgnorePattern": "^_",
-        // 使用された引数より後の引数をチェック
-        "args": "after-used",
-        // アンダースコアで始まる引数を無視
-        "argsIgnorePattern": "^_"
-      }
-    ],
-    // 関数とクラスメソッドの明示的な戻り値の型定義を強制するルールを無効化
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    // any 型の使用を許可 (必要に応じて)
-    "@typescript-eslint/no-explicit-any": "off",
-    "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ],
-        "pathGroups": [
-          {
-            "pattern": "@/**",
-            "group": "internal"
-          }
-        ],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
-  }
+	"root": true,
+	"parserOptions": {
+		"project": "./tsconfig.json", // tsconfig.json のパスを指定
+		"sourceType": "module" // ES Modules を使用する場合
+	},
+	"extends": [
+		// Next.js に最適化された推奨ルールセット
+		"next/core-web-vitals",
+		// TypeScript の推奨ルールセット
+		"plugin:@typescript-eslint/recommended",
+		// Tailwind CSS の推奨ルールセットを適用
+		"plugin:tailwindcss/recommended",
+		// Prettier のフォーマットルールと競合する ESLint ルールを無効化
+		"prettier"
+	],
+	// TypeScript と未使用 import チェックのためのプラグインを追加
+	"plugins": ["@typescript-eslint", "unused-imports", "tailwindcss"],
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx", "*.js"],
+			"parser": "@typescript-eslint/parser"
+		}
+	],
+	"rules": {
+		// TypeScript の未使用変数ルールを無効化 (unused-imports が処理するため)
+		"@typescript-eslint/no-unused-vars": "off",
+		// 未使用の import 文をエラーとして扱う
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			// 未使用の変数に関するルール
+			"warn", // 警告レベル
+			{
+				// すべての変数 (ローカル変数、グローバル変数、関数パラメータ) をチェック
+				"vars": "all",
+				// アンダースコアで始まる変数を無視
+				"varsIgnorePattern": "^_",
+				// 使用された引数より後の引数をチェック
+				"args": "after-used",
+				// アンダースコアで始まる引数を無視
+				"argsIgnorePattern": "^_"
+			}
+		],
+		// 関数とクラスメソッドの明示的な戻り値の型定義を強制するルールを無効化
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		//型インポートの場合でtypeが入っていない場合warnningに設定
+		"@typescript-eslint/consistent-type-imports": "warn",
+		// any 型の使用を許可 (必要に応じて)
+		"@typescript-eslint/no-explicit-any": "off",
+		"import/no-unresolved": [2, { "commonjs": true, "amd": true }],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					"builtin",
+					"external",
+					"internal",
+					"parent",
+					"sibling",
+					"index"
+				],
+				"pathGroups": [
+					{
+						"pattern": "@/**",
+						"group": "internal"
+					}
+				],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		]
+	}
 }
