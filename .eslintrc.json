@@ -35,6 +35,31 @@
     // 関数とクラスメソッドの明示的な戻り値の型定義を強制するルールを無効化
     "@typescript-eslint/explicit-module-boundary-types": "off",
     // any 型の使用を許可 (必要に応じて)
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }
